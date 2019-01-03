@@ -29,26 +29,7 @@ sudo chmod 4755 ${LJOS}-copy/bin/busybox
 
 
 cd ${LJOS}-copy/
-sudo tar cfJ ../ljos-build-21April2018.tar.xz *
+sudo tar cfJ ../ljos-build.tar.xz *
 
-
-sudo du -h|tail -n1
-
-ls -lh ljos-build-21April2018.tar.xz
-
-cat /proc/partitions |grep sdd
-
-
-sudo mkfs.ext4 /dev/sdd1
-sudo mkdir tmp
-sudo mount /dev/sdd1 tmp/
-cd tmp/
-
-
-
-sudo tar xJf ../ljos-build-21April2018.tar.xz
-
-
-sudo grub-install --root-directory=/home/petros/tmp/ /dev/sdd
 
 echo "build completed"
