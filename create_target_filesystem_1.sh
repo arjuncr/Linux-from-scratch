@@ -33,4 +33,3 @@ for dir in ${OS}/usr{,/local}; do
 echo "file system created"
 
 ls ${OS}
-
