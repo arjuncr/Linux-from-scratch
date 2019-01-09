@@ -4,11 +4,9 @@
 
 echo "gcc final build"
 
-
 mkdir gcc-build
 
 cd gcc-build/
-
 
 AR=ar LDFLAGS="-Wl,-rpath,${OS}/cross-tools/lib" \
 ../source/gcc/configure --prefix=${OS}/cross-tools \
@@ -23,9 +21,7 @@ AR=ar LDFLAGS="-Wl,-rpath,${OS}/cross-tools/lib" \
 make && make install
 cp -v ${OS}/cross-tools/${OS_TARGET}/lib64/libgcc_s.so.1 ${OS}/lib64
 
-
 echo "gcc final build completed"
-
 
 echo "cross compiler env"
 
@@ -38,7 +34,6 @@ export LD="${OS_TARGET}-ld"
 export RANLIB="${OS_TARGET}-ranlib"
 export READELF="${OS_TARGET}-readelf"
 export STRIP="${OS_TARGET}-strip"
-
 
 echo "cross compiler env completed"
 
