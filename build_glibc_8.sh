@@ -4,7 +4,6 @@
 
 echo "building glibc"
 
-
 mkdir glibc-build
 cd glibc-build/
 
@@ -12,8 +11,6 @@ echo "libc_cv_forced_unwind=yes" > config.cache
 echo "libc_cv_c_cleanup=yes" >> config.cache
 echo "libc_cv_ssp=no" >> config.cache
 echo "libc_cv_ssp_strong=no" >> config.cache
-
-
 
 BUILD_CC="gcc" CC="${OS_TARGET}-gcc" \
 AR="${OS_TARGET}-ar" \
@@ -26,6 +23,5 @@ RANLIB="${OS_TARGET}-ranlib" CFLAGS="-O2" \
 --with-headers=${OS}/usr/include \
 --cache-file=config.cache
 make && make install_root=${OS}/install
-
 
 echo "glibc build completed"
