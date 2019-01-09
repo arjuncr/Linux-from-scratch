@@ -7,9 +7,9 @@ echo "cross complile env"
 unset CFLAGS
 unset CXXFLAGS
 
-export LJOS_HOST=$(echo ${MACHTYPE} | sed "s/-[^-]*/-cross/")
-export LJOS_TARGET=x86_64-unknown-linux-gnu
-export LJOS_CPU=k8
-export LJOS_ARCH=$(echo ${LJOS_TARGET} | sed -e 's/-.*//' -e 's/i.86/i386/')
-export LJOS_ENDIAN=little
+export OS_HOST=$(echo ${MACHTYPE} | sed "s/-[^-]*/-cross/")
+export OS_TARGET=x86_64-unknown-linux-gnu
+export OS_CPU=k8
+export OS_ARCH=$(echo ${OS_TARGET} | sed -e 's/-.*//' -e 's/i.86/i386/')
+export OS_ENDIAN=little
 

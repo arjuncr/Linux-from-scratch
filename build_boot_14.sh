@@ -4,10 +4,10 @@
 
 echo "building boot"
 
-cd work/clfs-embedded-bootscripts/
+cd source/clfs-embedded-bootscripts/
 
-make DESTDIR=${LJOS}/ install-bootscripts
-ln -sv ../rc.d/startup ${LJOS}/etc/init.d/rcS
+make DESTDIR=${OS}/install-bootscripts
+ln -sv ../rc.d/startup ${OS}/etc/init.d/rcS
 
 echo "build boot completed"
 

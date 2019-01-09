@@ -4,17 +4,17 @@
 . ./build_env_0.sh
 
 
-ln -svf ../proc/mounts ${LJOS}/etc/mtab
+ln -svf ../proc/mounts ${OS}/etc/mtab
 
 echo "mtlab created"
 
-cat > ${LJOS}/etc/passwd << "EOF"
+cat > ${OS}/etc/passwd << "EOF"
 root::0:0:root:/root:/bin/ash
 EOF
 
 echo "created passwd"
 
-cat > ${LJOS}/etc/group << "EOF"
+cat > ${OS}/etc/group << "EOF"
 root:x:0:
 bin:x:1:
 sys:x:2:
@@ -30,7 +30,7 @@ EOF
 
 echo "created group"
 
-cat > ${LJOS}/etc/fstab << "EOF"
+cat > ${OS}/etc/fstab << "EOF"
 # file system  mount-point  type   options          dump  fsck
 #                                                         order
 
@@ -43,7 +43,7 @@ EOF
 
 echo "created fstab"
 
-cat > ${LJOS}/etc/profile << "EOF"
+cat > ${OS}/etc/profile << "EOF"
 export PATH=/bin:/usr/bin
 
 if [ `id -u` -eq 0 ] ; then
@@ -64,9 +64,9 @@ EOF
 
 echo "created profile"
 
-echo "minimal-os" > ${LJOS}/etc/HOSTNAME
+echo "linux" > ${OS}/etc/HOSTNAME
 
-cat > ${LJOS}/etc/issue<< "EOF"
+cat > ${OS}/etc/issue<< "EOF"
 Linux baso os 1.0
 Kernel \r on an \m
 
@@ -74,7 +74,7 @@ EOF
 
 echo "created issue"
 
-cat > ${LJOS}/etc/inittab<< "EOF"
+cat > ${OS}/etc/inittab<< "EOF"
 ::sysinit:/etc/rc.d/startup
 
 tty1::respawn:/sbin/getty 38400 tty1
@@ -90,7 +90,7 @@ EOF
 
 echo "created inittab"
 
-cat > ${LJOS}/etc/mdev.conf<< "EOF"
+cat > ${OS}/etc/mdev.conf<< "EOF"
 # Devices:
 # Syntax: %s %d:%d %s
 # devices user:group mode
@@ -156,9 +156,9 @@ EOF
 echo "created mdev conf"
 
 
-mkdir ${LJOS}/boot/grub
+mkdir ${OS}/boot/grub
 
-cat > ${LJOS}/boot/grub/grub.cfg<< "EOF"
+cat > ${OS}/boot/grub/grub.cfg<< "EOF"
 set default=0
 set timeout=5
 
@@ -171,9 +171,9 @@ EOF
 
 echo "created grup.cfg"
 
-touch ${LJOS}/var/run/utmp ${LJOS}/var/log/{btmp,lastlog,wtmp}
+touch ${OS}/var/run/utmp ${OS}/var/log/{btmp,lastlog,wtmp}
 
-chmod -v 664 ${LJOS}/var/run/utmp ${LJOS}/var/log/lastlog
+chmod -v 664 ${OS}/var/run/utmp ${OS}/var/log/lastlog
 
 
 echo "basic file creation done"

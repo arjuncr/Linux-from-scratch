@@ -5,13 +5,13 @@
 
 echo "kernal header"
 
-cd work/linux
+cd source/linux
 
-mkdir ${LJOS}/usr/include
+mkdir ${OS}/usr/include
 make mrproper
-make ARCH=${LJOS_ARCH} headers_check && \
-make ARCH=${LJOS_ARCH} INSTALL_HDR_PATH=dest headers_install
-cp -rv dest/include/* ${LJOS}/usr/include
+make ARCH=${OS_ARCH} headers_check && \
+make ARCH=${OS_ARCH} INSTALL_HDR_PATH=dest headers_install
+cp -rv dest/include/* ${OS}/usr/include
 
 cd ../..
 

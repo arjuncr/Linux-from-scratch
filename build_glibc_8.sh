@@ -4,6 +4,7 @@
 
 echo "building glibc"
 
+
 mkdir glibc-build
 cd glibc-build/
 
@@ -14,17 +15,17 @@ echo "libc_cv_ssp_strong=no" >> config.cache
 
 
 
-BUILD_CC="gcc" CC="${LJOS_TARGET}-gcc" \
-AR="${LJOS_TARGET}-ar" \
-RANLIB="${LJOS_TARGET}-ranlib" CFLAGS="-O2" \
-../work/glibc/configure --prefix=/usr \
---host=${LJOS_TARGET} --build=${LJOS_HOST} \
+BUILD_CC="gcc" CC="${OS_TARGET}-gcc" \
+AR="${OS_TARGET}-ar" \
+RANLIB="${OS_TARGET}-ranlib" CFLAGS="-O2" \
+../source/glibc/configure --prefix=/usr \
+--host=${OS_TARGET} --build=${OS_HOST} \
 --disable-profile --enable-add-ons --with-tls \
 --enable-kernel=2.6.32 --with-__thread \
---with-binutils=${LJOS}/cross-tools/bin \
---with-headers=${LJOS}/usr/include \
+--with-binutils=${OS}/cross-tools/bin \
+--with-headers=${OS}/usr/include \
 --cache-file=config.cache
-make && make install_root=${LJOS}/ install
+make && make install_root=${OS}/install
 
 
 echo "glibc build completed"

@@ -5,17 +5,16 @@
 
 echo "building zlib"
 
-cd work/zlib
+cd source/zlib
 
 sed -i 's/-O3/-Os/g' configure
 ./configure --prefix=/usr --shared
-make && make DESTDIR=${LJOS}/ install
+make && make DESTDIR=${OS}/ install
 
-
-mv -v ${LJOS}/usr/lib/libz.so.* ${LJOS}/lib
-ln -svf ../../lib/libz.so.1 ${LJOS}/usr/lib/libz.so
-ln -svf ../../lib/libz.so.1 ${LJOS}/usr/lib/libz.so.1
-ln -svf ../lib/libz.so.1 ${LJOS}/lib64/libz.so.1
+mv -v ${OS}/usr/lib/libz.so.* ${OS}/lib
+ln -svf ../../lib/libz.so.1 ${OS}/usr/lib/libz.so
+ln -svf ../../lib/libz.so.1 ${OS}/usr/lib/libz.so.1
+ln -svf ../lib/libz.so.1 ${OS}/lib64/libz.so.1
 
 
 echo "completed zlib build"

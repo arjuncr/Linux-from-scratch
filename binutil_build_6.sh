@@ -7,13 +7,13 @@ mkdir binutils-build
 
 cd binutils-build/
 
-../work/binutil/configure --prefix=${LJOS}/cross-tools \
---target=${LJOS_TARGET} --with-sysroot=${LJOS} \
+../source/binutil/configure --prefix=${OS}/cross-tools \
+--target=${OS_TARGET} --with-sysroot=${OS} \
 --disable-nls --enable-shared --disable-multilib
 make configure-host && make
-ln -sv lib ${LJOS}/cross-tools/lib64
+ln -sv lib ${OS}/cross-tools/lib64
 make install
 
-cp -v ../work/binutil/include/libiberty.h ${LJOS}/usr/include
+cp -v ../source/binutil/include/libiberty.h ${OS}/usr/include
 
 cd ..

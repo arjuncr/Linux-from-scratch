@@ -6,23 +6,22 @@ echo "gcc final build"
 
 
 mkdir gcc-build
+
 cd gcc-build/
 
 
-
-
-AR=ar LDFLAGS="-Wl,-rpath,${LJOS}/cross-tools/lib" \
-../work/gcc/configure --prefix=${LJOS}/cross-tools \
---build=${LJOS_HOST} --target=${LJOS_TARGET} \
---host=${LJOS_HOST} --with-sysroot=${LJOS} \
+AR=ar LDFLAGS="-Wl,-rpath,${OS}/cross-tools/lib" \
+../source/gcc/configure --prefix=${OS}/cross-tools \
+--build=${OS_HOST} --target=${OS_TARGET} \
+--host=${OS_HOST} --with-sysroot=${OS} \
 --disable-nls --enable-shared \
 --enable-languages=c,c++ --enable-c99 \
 --enable-long-long \
 --with-mpfr-include=$(pwd)/../work/gcc/mpfr/src \
 --with-mpfr-lib=$(pwd)/mpfr/src/.libs \
---disable-multilib --with-arch=${LJOS_CPU}
+--disable-multilib --with-arch=${OS_CPU}
 make && make install
-cp -v ${LJOS}/cross-tools/${LJOS_TARGET}/lib64/libgcc_s.so.1 ${LJOS}/lib64
+cp -v ${OS}/cross-tools/${OS_TARGET}/lib64/libgcc_s.so.1 ${OS}/lib64
 
 
 echo "gcc final build completed"
@@ -30,17 +29,17 @@ echo "gcc final build completed"
 
 echo "cross compiler env"
 
-export CC="${LJOS_TARGET}-gcc"
-export CXX="${LJOS_TARGET}-g++"
-export CPP="${LJOS_TARGET}-gcc -E"
-export AR="${LJOS_TARGET}-ar"
-export AS="${LJOS_TARGET}-as"
-export LD="${LJOS_TARGET}-ld"
-export RANLIB="${LJOS_TARGET}-ranlib"
-export READELF="${LJOS_TARGET}-readelf"
-export STRIP="${LJOS_TARGET}-strip"
+export CC="${OS_TARGET}-gcc"
+export CXX="${OS_TARGET}-g++"
+export CPP="${OS_TARGET}-gcc -E"
+export AR="${OS_TARGET}-ar"
+export AS="${OS_TARGET}-as"
+export LD="${OS_TARGET}-ld"
+export RANLIB="${OS_TARGET}-ranlib"
+export READELF="${OS_TARGET}-readelf"
+export STRIP="${OS_TARGET}-strip"
 
 
 echo "cross compiler env completed"
 
-
+cd ..
