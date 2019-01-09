@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 . ./build_env_0.sh
 
 mkdir binutils-build
