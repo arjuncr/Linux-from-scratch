@@ -64,11 +64,9 @@ echo "copied binutil"
 
 cp -r archive/busybox-1.28.3 work/busybox/
 
-
 echo "copied busy box"
 
 cp -r archive/clfs-embedded-bootscripts-1.0-pre5 work/clfs-embedded-bootscripts/
-
 
 echo "copied clfs-embedded-bootscripts"
 
@@ -103,4 +101,3 @@ echo "copied zlib"
 ls work
 
 echo "copying completed"
-
