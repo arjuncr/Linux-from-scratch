@@ -1,8 +1,6 @@
 #!/bin/bash
 
-
 . ./build_env_0.sh
-
 
 ln -svf ../proc/mounts ${OS}/etc/mtab
 
@@ -50,7 +48,6 @@ if [ `id -u` -eq 0 ] ; then
         PATH=/bin:/sbin:/usr/bin:/usr/sbin
         unset HISTFILE
 fi
-
 
 # Set up some environment variables.
 export USER=`id -un`
@@ -155,7 +152,6 @@ EOF
 
 echo "created mdev conf"
 
-
 mkdir ${OS}/boot/grub
 
 cat > ${OS}/boot/grub/grub.cfg<< "EOF"
@@ -175,7 +171,4 @@ touch ${OS}/var/run/utmp ${OS}/var/log/{btmp,lastlog,wtmp}
 
 chmod -v 664 ${OS}/var/run/utmp ${OS}/var/log/lastlog
 
-
 echo "basic file creation done"
-
-
