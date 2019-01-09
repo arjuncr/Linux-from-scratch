@@ -8,5 +8,3 @@ install -dv ${OS}/cross-tools{,/bin}
 echo "created dir for cross complilation"
 
 ls ${OS}
-
-
