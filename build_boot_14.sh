@@ -12,4 +12,3 @@ ln -sv ../rc.d/startup ${OS}/etc/init.d/rcS
 echo "build boot completed"
 
 cd ../../
-
