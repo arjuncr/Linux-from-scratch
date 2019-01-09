@@ -2,8 +2,7 @@
 
 . ./build_env_0.sh
 
-
-echo "kernal header"
+echo "kernel header"
 
 cd source/linux
 
@@ -14,5 +13,3 @@ make ARCH=${OS_ARCH} INSTALL_HDR_PATH=dest headers_install
 cp -rv dest/include/* ${OS}/usr/include
 
 cd ../..
-
-
