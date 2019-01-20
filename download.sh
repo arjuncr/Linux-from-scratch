@@ -1,10 +1,10 @@
 #!/bin/bash
 
-mkdir downloads
+mkdir tmp
 
-cd downloads
+rm -r tmp/*
 
-rm -r *
+cd tmp
 
 wget https://ftp.gnu.org/gnu/binutils/binutils-2.30.tar.xz
 
@@ -51,4 +51,3 @@ tar -xvzf zlib-1.2.11.tar.gz
 echo "packages extracted"
 
 cd ..
-
