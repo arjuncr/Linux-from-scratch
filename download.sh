@@ -1,8 +1,8 @@
 #!/bin/bash
 
-mkdir archive
+mkdir downloads
 
-cd archive
+cd downloads
 
 rm -r *
 
@@ -52,52 +52,3 @@ echo "packages extracted"
 
 cd ..
 
-mkdir work
-
-rm -r work/*
-
-echo "copying packages from archive to work"
-
-cp -r archive/binutils-2.30 work/binutil/
-
-echo "copied binutil"
-
-cp -r archive/busybox-1.28.3 work/busybox/
-
-echo "copied busy box"
-
-cp -r archive/clfs-embedded-bootscripts-1.0-pre5 work/clfs-embedded-bootscripts/
-
-echo "copied clfs-embedded-bootscripts"
-
-cp -r archive/gcc-7.3.0 work/gcc/
-
-echo "copied gcc"
-
-cp -r archive/glibc-2.27 work/glibc/
-
-echo "copied glibc"
-
-cp -r archive/gmp-6.1.2 work/gmp/
-
-echo "copied gmp"
-
-cp -r archive/linux-4.16.3 work/linux/
-
-echo "copied linux kernal"
-
-cp -r archive/mpc-1.1.0 work/mpc/
-
-echo "copied mpc"
-
-cp -r archive/mpfr-4.0.1 work/mpfr/
-
-echo "copied mpfr"
-
-cp -r archive/zlib-1.2.11 work/zlib/
-
-echo "copied zlib"
-
-ls work
-
-echo "copying completed"
