@@ -4,12 +4,12 @@
 
 echo "gcc final build"
 
-mkdir gcc-build
+mkdir work/gcc-build
 
-cd gcc-build/
+cd work/gcc-build/
 
 AR=ar LDFLAGS="-Wl,-rpath,${OS}/cross-tools/lib" \
-../source/gcc/configure --prefix=${OS}/cross-tools \
+../../source/gcc/configure --prefix=${OS}/cross-tools \
 --build=${OS_HOST} --target=${OS_TARGET} \
 --host=${OS_HOST} --with-sysroot=${OS} \
 --disable-nls --enable-shared \
@@ -37,4 +37,4 @@ export STRIP="${OS_TARGET}-strip"
 
 echo "cross compiler env completed"
 
-cd ..
+cd ../..

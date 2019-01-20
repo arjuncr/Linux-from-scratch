@@ -152,8 +152,6 @@ EOF
 
 echo "created mdev conf"
 
-mkdir ${OS}/boot/grub
-
 cat > ${OS}/boot/grub/grub.cfg<< "EOF"
 set default=0
 set timeout=5

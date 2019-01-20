@@ -24,12 +24,12 @@ echo "copy completed"
 
 cd ..
 
-mkdir gcc-static
+mkdir work/gcc-static
 
-cd gcc-static/ 
+cd work/gcc-static/ 
 
 AR=ar LDFLAGS="-Wl,-rpath,${OS}/cross-tools/lib" \
-../source/gcc/configure --prefix=${OS}/cross-tools \
+../../source/gcc/configure --prefix=${OS}/cross-tools \
 --build=${OS_HOST} --host=${OS_HOST} \
 --target=${OS_TARGET} \
 --with-sysroot=${OS}/target --disable-nls \
@@ -43,5 +43,7 @@ AR=ar LDFLAGS="-Wl,-rpath,${OS}/cross-tools/lib" \
 make all-gcc all-target-libgcc && \
 make install-gcc install-target-libgcc
 ln -vs libgcc.a `${OS_TARGET}-gcc -print-libgcc-file-name | sed 's/libgcc/&_eh/'`
+
+cd ../..
 
 echo "gcc build completed"

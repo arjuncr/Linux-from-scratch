@@ -4,7 +4,7 @@
 
 echo "creating basic file system"
 
-mkdir -pv ${OS}/{bin,boot{,grub},dev,{etc/,}opt,home,lib/{firmware,modules},lib64,mnt}
+mkdir -pv ${OS}/{bin,boot/{,grub},dev,{etc/,}opt,home,lib/{firmware,modules},lib64,mnt}
 
 mkdir -pv ${OS}/{proc,media/{floppy,cdrom},sbin,srv,sys}
 
