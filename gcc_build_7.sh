@@ -28,8 +28,8 @@ mkdir work/gcc-static
 
 cd work/gcc-static/ 
 
-AR=ar LDFLAGS="-Wl,-rpath,${OS}/cross-tools/lib" \
-../../source/gcc/configure --prefix=${OS}/cross-tools \
+AR=ar LDFLAGS="-Wl,-rpath,${CROSS_CC}/cross-tools/lib" \
+../../source/gcc/configure --prefix=${CROSS_CC}/cross-tools \
 --build=${OS_HOST} --host=${OS_HOST} \
 --target=${OS_TARGET} \
 --with-sysroot=${OS}/target --disable-nls \
