@@ -9,9 +9,7 @@ mkdir -pv ${OS}
 
 export LC_ALL=POSIX
 
-CROSS_CC=`pwd`
-
-export PATH=$PATH:$(CROSS_CC}/cross-tools/bin
+export PATH=$PATH:${OS}/cross-tools/bin
 
 echo "cross complile env"
 
