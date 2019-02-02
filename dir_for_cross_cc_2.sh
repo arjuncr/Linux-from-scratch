@@ -3,8 +3,9 @@
 . ./build_env_0.sh
 
 echo "creating dir for cross-cc"
-install -dv ${OS}/cross-tools{,/bin}
+
+install -dv ${CROSS_CC}/cross-tools{,/bin}
 
 echo "created dir for cross complilation"
 
-ls ${OS}
+ls ${CROSS_CC}
