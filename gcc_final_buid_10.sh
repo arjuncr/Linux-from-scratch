@@ -8,8 +8,8 @@ mkdir work/gcc-build
 
 cd work/gcc-build/
 
-AR=ar LDFLAGS="-Wl,-rpath,${OS}/cross-tools/lib" \
-../../source/gcc/configure --prefix=${OS}/cross-tools \
+AR=ar LDFLAGS="-Wl,-rpath,${CROSS_CC}/cross-tools/lib" \
+../../source/gcc/configure --prefix=${CROSS_CC}/cross-tools \
 --build=${OS_HOST} --target=${OS_TARGET} \
 --host=${OS_HOST} --with-sysroot=${OS} \
 --disable-nls --enable-shared \
@@ -19,7 +19,7 @@ AR=ar LDFLAGS="-Wl,-rpath,${OS}/cross-tools/lib" \
 --with-mpfr-lib=$(pwd)/mpfr/src/.libs \
 --disable-multilib --with-arch=${OS_CPU}
 make && make install
-cp -v ${OS}/cross-tools/${OS_TARGET}/lib64/libgcc_s.so.1 ${OS}/lib64
+cp -v ${CROSS_CC}/cross-tools/${OS_TARGET}/lib64/libgcc_s.so.1 ${OS}/lib64
 
 echo "gcc final build completed"
 
