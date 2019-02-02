@@ -12,11 +12,11 @@
 
 ./binutil_build_6.sh
 
-./gcc_build_7.sh
+#./gcc_build_7.sh
 
 ./build_glibc_8.sh
 
-./gcc_final_buid_10.sh
+#./gcc_final_buid_10.sh
 
 ./build_busy_box_11.sh
 
@@ -29,4 +29,3 @@
 ./install_target_image_16.sh
 
 echo "build completed"
-
