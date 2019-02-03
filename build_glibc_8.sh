@@ -19,7 +19,7 @@ RANLIB="${OS_TARGET}-ranlib" CFLAGS="-O2" \
 --host=${OS_TARGET} --build=${OS_HOST} \
 --disable-profile --enable-add-ons --with-tls \
 --enable-kernel=2.6.32 --with-__thread \
---with-binutils=${OS}/cross-tools/bin \
+--with-binutils=${CROSS_CC}/cross-tools/bin \
 --with-headers=${OS}/usr/include \
 --cache-file=config.cache
 make && make install_root=${OS}/install
