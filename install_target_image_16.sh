@@ -22,6 +22,7 @@ sudo mknod -m 0600 ${OS}-copy/dev/console c 5 1
 sudo chmod 4755 ${OS}-copy/bin/busybox
 
 cd ${OS}-copy/
+
 sudo tar cfJ ../linux_os-build.tar.xz *
 
 echo "build completed"
