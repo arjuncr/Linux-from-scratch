@@ -13,8 +13,8 @@ make CROSS_COMPILE="${OS_TARGET}-"
 make CROSS_COMPILE="${OS_TARGET}-" \
 CONFIG_PREFIX="${LJOS}" install
 
-cp -v examples/depmod.pl ${OS}/cross-tools/bin
-chmod 755 ${OS}/cross-tools/bin/depmod.pl
+cp -v examples/depmod.pl ${CROSS_CC}/cross-tools/bin
+chmod 755 ${CROSS_CC}/cross-tools/bin/depmod.pl
 
 echo "complete busy box setup"
 
