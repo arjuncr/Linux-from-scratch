@@ -10,7 +10,7 @@
 
 ./linux_headers_5.sh
 
-./binutil_build_6.sh
+#./binutil_build_6.sh
 
 #./gcc_build_7.sh
 
