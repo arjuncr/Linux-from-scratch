@@ -19,6 +19,7 @@ AR=ar LDFLAGS="-Wl,-rpath,${CROSS_CC}/cross-tools/lib" \
 --with-mpfr-lib=$(pwd)/mpfr/src/.libs \
 --disable-multilib --with-arch=${OS_CPU}
 make && make install
+
 cp -v ${CROSS_CC}/cross-tools/${OS_TARGET}/lib64/libgcc_s.so.1 ${OS}/lib64
 
 echo "gcc final build completed"
