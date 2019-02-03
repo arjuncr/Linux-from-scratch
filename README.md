@@ -1,5 +1,7 @@
 The project is under development
 
-use the above script to create image tree
+Use the above script to create image tree
 
-Run ./build_image.sh
+step1: Run ./build_cross_gcc.sh for building cross-gcc
+ 
+step2: Run ./build_image.sh
