@@ -13,6 +13,6 @@ make configure-host && make
 ln -sv lib ${CROSS_CC}/cross-tools/lib64
 make install
 
-cp -v ../source/binutil/include/libiberty.h ${OS}/usr/include
+cp -v ../../source/binutil/include/libiberty.h ${OS}/usr/include
 
 cd ../..
