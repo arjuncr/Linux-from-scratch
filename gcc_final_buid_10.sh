@@ -16,7 +16,7 @@ AR=ar LDFLAGS="-Wl,-rpath,${CROSS_CC}/cross-tools/lib" \
 --enable-languages=c,c++ --enable-c99 \
 --enable-long-long \
 --with-mpfr-include=$(pwd)/../work/gcc/mpfr/src \
---with-mpfr-lib=$(pwd)/mpfr/src/.libs \
+--with-mpfr-lib=$(pwd)/../work/gcc/mpfr/src/.libs \
 --disable-multilib --with-arch=${OS_CPU}
 make && make install
 
