@@ -35,7 +35,7 @@ AR=ar LDFLAGS="-Wl,-rpath,${CROSS_CC}/cross-tools/lib" \
 --with-sysroot=${OS}/target --disable-nls \
 --disable-shared \
 --with-mpfr-include=$(pwd)/../work/gcc/mpfr/src \
---with-mpfr-lib=$(pwd)/mpfr/src/.libs \
+--with-mpfr-lib=$(pwd)/../work/gcc/mpfr/src/.libs \
 --without-headers --with-newlib --disable-decimal-float \
 --disable-libgomp --disable-libmudflap --disable-libssp \
 --disable-threads --enable-languages=c,c++ \
