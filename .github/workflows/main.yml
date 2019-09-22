@@ -1,0 +1,16 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install build dep
+      run: sudo apt install bison flex libelf-dev
+    - name: Running script to create iso image 
+      run: |
+        ./build_image.sh
