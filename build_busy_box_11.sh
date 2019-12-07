@@ -6,15 +6,14 @@ echo "building busybox"
 
 cd source/busybox
 
-make CROSS_COMPILE="${OS_TARGET}-" defconfig
-make CROSS_COMPILE="${OS_TARGET}-" menuconfig
+make CROSS_COMPILE=${CROSS_CC}-gcc defconfig
 
-make CROSS_COMPILE="${OS_TARGET}-"
-make CROSS_COMPILE="${OS_TARGET}-" \
+make CROSS_COMPILE=${CROSS_CC}-gcc
+make CROSS_COMPILE=${CROSS_CC}-gcc \
 CONFIG_PREFIX="${LJOS}" install
 
-cp -v examples/depmod.pl ${CROSS_CC}/cross-tools/bin
-chmod 755 ${CROSS_CC}/cross-tools/bin/depmod.pl
+cp -v examples/depmod.pl cross-tools/bin
+chmod 755 cross-tools/bin/depmod.pl
 
 echo "complete busy box setup"
 

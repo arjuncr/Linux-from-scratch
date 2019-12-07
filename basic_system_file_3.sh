@@ -64,7 +64,7 @@ echo "created profile"
 echo "linux" > ${OS}/etc/HOSTNAME
 
 cat > ${OS}/etc/issue<< "EOF"
-Linux baso os 1.0
+Linux base os 1.0
 Kernel \r on an \m
 
 EOF

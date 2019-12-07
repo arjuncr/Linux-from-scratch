@@ -2,19 +2,17 @@
 
 echo "basic env for building minimal distro" 
 
-export OS=~/image
+export BASEDIR=`realpath --no-symlinks $PWD`
+
+export OS=$BASEDIR/image
 
 mkdir -pv ${OS}
 
 export LC_ALL=POSIX
 
-export PATH=$PATH:${OS}/cross-tools/bin
+export PATH=$PATH:${BASEDIR}/cross-tools/bin
 
-CROSS_CC=$OS
-
-#CROSS_CC=`pwd`
-
-#export PATH=$PATH:${CROSS_CC}/cross-tools/bin
+export CROSS_CC=${BASEDIR}/cross-tools/bin
 
 echo "cross complile env"
 

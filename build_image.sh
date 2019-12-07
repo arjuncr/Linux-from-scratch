@@ -2,11 +2,11 @@
 
 ./create_target_filesystem_1.sh
 
-./dir_for_cross_cc_2.sh
+#./dir_for_cross_cc_2.sh
 
 ./basic_system_file_3.sh
 
-./cross_compile_env_4.sh
+#./cross_compile_env_4.sh
 
 ./linux_headers_5.sh
 
