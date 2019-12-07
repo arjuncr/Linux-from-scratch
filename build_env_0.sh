@@ -10,10 +10,7 @@ mkdir -pv ${OS}
 
 export LC_ALL=POSIX
 
-export PATH=$PATH:${BASEDIR}/cross-tools/bin
-
-export CROSS_CC=${BASEDIR}/cross-tools/bin
-
+export CROSS_CC=${BASEDIR}/cross-tool/x86_64-linux/bin/x86_64-linux
 echo "cross complile env"
 
 unset CFLAGS
